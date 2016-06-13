@@ -1,11 +1,22 @@
-# hello
-# world
-# dev branch
-# origin
+# trapezoib
+#
+# (описание программы)
 
 #import layer
 
+import sys
+import logging
+
+logging.basicConfig(
+    format = '[%(asctime)s][%(levelname)s] %(message)s',
+    stream = sys.stdout,
+    level  = logging.INFO
+)
+
 print("$> Start")
+
+logger = logging.getLogger("trapezoid")
+logger.info("Print start programm")
 
 # класс фигура
 class figure:
