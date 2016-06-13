@@ -7,7 +7,7 @@
 
 print("$> Start")
 
-# ����� ������
+# класс фигура
 class figure:
     """description of class"""
 
@@ -15,7 +15,7 @@ class figure:
         self.num = x
         self.coord = []
 
-# ����� ����
+# класс слой
 class layer:
     """description of class"""
 
