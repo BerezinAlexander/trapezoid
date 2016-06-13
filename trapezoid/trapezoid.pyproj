@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="layer.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="trapezoid.py" />
   </ItemGroup>
   <PropertyGroup>
