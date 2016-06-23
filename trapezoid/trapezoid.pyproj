@@ -26,6 +26,9 @@
     <Compile Include="layer.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="primitives.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="trapeze.py">
       <SubType>Code</SubType>
     </Compile>

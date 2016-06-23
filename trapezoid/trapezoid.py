@@ -48,11 +48,48 @@ for ln in shapesStr:
     print(ln)
 
 # нарезка на трапеции
-cuttingOnTheTrapeze(layers)
+trapezes = []
+trapezes = cuttingOnTheTrapeze(layers)
 
+# заголовок файла
+buffer = "---- Edges:\n"
+for tra in trapezes:
+    buffer += tra.getBuf()
 
+logger.info("Write edges in file '12 edge'")
+# запись в файл
+f = open('12 edge', 'w')
+f.write(buffer)
+f.close()
 
+# вывод фигур
+logger.info("Print cutting shapes")
+print(" ")
+for key in layers:
+    layers[key].printAll()
 
+dicColor = {}
+dicColor[1] = "#00aaff"
+dicColor[2] = "#ffff00"
+dicColor[3] = "#ff557f"
+dicColor[4] = "#00aaff"
+dicColor[5] = "#ffff00"
+dicColor[6] = "#ff557f"
+
+# заголовок файла
+buffer = "---- Layers:\n"
+for key in layers:
+    buffer += "M" + str(key) + " " + dicColor[key] + "\n"
+
+buffer += "\n---- Shapes:\n"
+for key in layers:  
+    buffer += layers[key].getBuffer()
+
+logger.info("Write shapes in file '12 new'")
+# запись в файл
+f = open('12 new', 'w')
+f.write(buffer)
+f.close()
 
 
 

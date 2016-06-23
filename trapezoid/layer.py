@@ -17,6 +17,27 @@ class layer(object):
     def addShape(self, coord, contour):
         self.shapes.append(shape(coord, contour))
 
+    def printAll(self):
+        for sh in self.shapes:
+            buf = "Layer: M"
+            buf = buf + str(self.num)
+            buf = buf + " Origin: ( " + str(sh.origin[0]) + " " + str(sh.origin[1]) + " ) Contour: ( "
+            for con in sh.contour:
+                buf = buf + "( " + str(con[0]) + " " + str(con[1]) + " ) "
+            buf += " )\n"
+            print(buf)
+    def getBuffer(self):
+        buffer = ""
+        for sh in self.shapes:
+            buf = "Layer: M"
+            buf = buf + str(self.num)
+            buf = buf + " Origin: ( " + str(sh.origin[0]) + " " + str(sh.origin[1]) + " ) Contour: ( "
+            for con in sh.contour:
+                buf = buf + "( " + str(con[0]) + " " + str(con[1]) + " ) "
+            buf += " )\n"
+            buffer += buf
+        return buffer
+
 # создание слоя или добавление фигуры в существующий
 def addLayer(layers, num):
     if layers.get(num) == None:
